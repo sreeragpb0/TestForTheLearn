@@ -1,0 +1,93 @@
+-----------------------------------------------------------------LAzY ADmIn-------------------------------------------------------------------------
+
+
+
+
+
+Enumeration:>
+	nmap -sV -A IP
+	
+
+	ports:-
+		22=> openSSH 7.2p2
+		80=> Apache httpd 2.4.18
+	
+
+	Here we find web server is running on port 80 , so we could use some directory bruteforce on that for some low hanging fruits or something 
+	else.
+
+Let's do some gobuster;
+
+	we got some directory :
+		content/
+			that says the website is madeup of the sweet rice cms.
+			and there is also a link pointing to the cms official i think 
+			in that site it share 2 kind of info that is within our interest,
+			one is important datas are stored in inc folder and the other is 
+			datas are stored only in .db and .txt formats 	
+			lets go for some more hunt with gobuster
+
+		After some reading on the website find some interesting pages inside the content/ dir 
+		as they said before inc is the treasure for us.
+
+		Let's search for some sweets!
+ 
+
+Exploitation:> 
+
+		from that directory we managed to find the credentials for ssh :
+		and pass is encrypted.
+		crack the hash and go for hydra to brute the username.
+
+		it is not a credentials for ssh 
+
+
+
+
+		And from another directory search, we managed to find  the as directory under the content, that has the admin login page;
+		let's try the creds against it.
+		And for this time our shot hit on the target , lets see around for the reverse shell connection.:
+
+Gaining Access:> 
+
+
+		From the admin panel selecting the ads option and create our shell on that. And for the activation of that code on the server we need to activate by going
+		http://IP/content/inc/ads/name_of_the_ads_we_given
+		
+		And also in our terminal use to listen by using nc;
+		We got that shell
+				chill around and spawn a python shell by python -c 'import pty;pty.spawn("/bin/bash")'
+
+
+				and by the use of sudo -l command we are able to see the all users can use the perl 
+
+
+				go out and check gtfobins for particular one;
+
+
+				and before that we need to find the user flag~
+				
+				
+
+
+after so much time,
+
+we identify the file that is able to use with root that is backup.pl by opening that we get another file and opening that one show the rev shell by changing the ip and port
+we are able to get the root shell back and also the root flag~
+
+
+
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+##############################################################################################################################################################################
+________________________________________________________________________________________________________________________________________________________________________________________
+***************************************************************************************************************************************************************************
+
+
+
+
+
+
+		

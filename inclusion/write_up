@@ -1,0 +1,35 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++The Inclusion+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+->Enumeration.
+->Exploitation.
+->Privilege Escalation.
+
+
+===================================================================================================================================
+
+
+Enumeration
+-----------
+
+ports:-
+ 
+22- openssh7.6p1
+80-Werkzeug httpd 0.16.0 (python)
+os- linux 
+
+======================================================================================================================================
+
+
+Exploitation
+------------
+
+In url bar we are able to inject the the unix code for finding passwd file. 
+And we are able to find the ssh credentials, by the use of that creds we are able to get the access.
+We got our first flag woooohaaa.........
+Next thing is we need to escalate our privileges to get the root flag,
+for that we start with the sudo -l whooyaa ; socat is there for us:
+do the things like as in the gtfobins;.
+And for me i like the sudo socat stdin exec:/bin/sh
+Wait ,there are a lot of techniques for escalating privileges on this particular box ; it's upto you...........
+Have a good day........and Happy learning.

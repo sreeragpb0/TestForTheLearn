@@ -1,0 +1,21 @@
+                                      /\    _____.
+				     /	\   |    |
+				    /----\  |  ____
+				   /	  \ |____|
+
+
+
+
+------------------------------------------AGENT SUDO Writeup-----------------------------------------------
+1. Enumeration.
+2.
+
+
+
+Enumeration:
+	portscanning:-
+		
+21-> ftp vsftpd 3.0.3
+22-> ssh openssh7.6p1
+80-> httpd apache httpd 2.4.29
+os -> linux flavour
